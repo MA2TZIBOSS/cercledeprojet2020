@@ -166,3 +166,43 @@ max-width: 100%;
         padding: 0 !important;
     }
 }
+
+/* animation */
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.landing-pingouin {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-hidden {
+    0% {
+        transform: translatey(+25px);
+    }
+    35% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(0px);
+    }
+    65% {
+        transform: translatey(0px);
+    }
+    100% {
+        transform: translatey(+25px);
+    }
+}
+
+.cut-pingouin {
+    animation: float-hidden 5s ease-in-out infinite;
+}
