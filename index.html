@@ -87,14 +87,14 @@
         </div>
     </section>
 
-    <section class="rencontre back1 col-12" id="rencontre">
-        <h2 class="text-center rencontre_title">Me rencontrer</h2>
+    <section class="rencontre back3 col-12" id="rencontre">
+        <h2 class="text-center rencontre_title hidden">Me rencontrer</h2>
         <div class="row">
             <div class="col-12 col-lg-4 text-center">
                 <img src="http://placehold.it/500x500" class="img-fluid" alt="">
             </div>
             <div class="col-12 col-lg-8">
-                <h4 class="text-center">Venez me rencontrer aux portes ouvertes</h4>
+                <h2 class="text-center">Venez me rencontrer aux portes ouvertes</h2>
                 <p class="text-center">Je serai présent aux portes ouvertes de L'institut G4 :<br><br>
 
                 <div class="row margin-row">
@@ -116,6 +116,19 @@
                         - Le X avril 2021<br>
                         - Le X avril 2021<br>
                     </div>
+                </div>
+                <div class="row">
+                        <div class="col-6">
+                            <div class="round-footer">
+                                <audio id="nyan" src="poupi.mp3" preload="metadata" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <a class="btn" id="nyan-btn"><i class="fa fa-volume-up btn-poupi"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-6 listen">
+                            ecoutez moi !
+                        </div>
                 </div>
             </div>
         </div>
@@ -144,13 +157,38 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="round-footer">
-                    <i class="fa fa-download"></i>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-download"></i>
+                    </button>
                 </div>
                 <p>Flyer</p>
             </div>
         </div>
     </section>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <section class="footer col-12">
     <p class="footer-text">
@@ -193,6 +231,50 @@
             fjs.parentNode.insertBefore(js, fjs);    
         }(document, 'script', 'facebook-jssdk'));  
     }, 0);
+</script>
+
+<script>
+    var nyan = document.getElementById('nyan');
+    var nyanBtn = document.getElementById('nyan-btn');
+
+    function playPause(song){
+        if (song.paused && song.currentTime >= 0 && !song.ended) {
+            song.play();
+        } else {
+            song.pause();
+        }
+    }
+
+    function reset(btn, song){
+        if(btn.classList.contains('playing')){
+            btn.classList.toggle('playing');
+        }
+        song.pause();
+        song.currentTime = 0;
+    }
+
+    function progress(btn, song){
+        setTimeout(function(){
+            var end = song.duration;
+            var current = song.currentTime;
+            var percent = current/(end/100);
+            //check if song is at the end
+            if(current==end){
+                reset(btn, song);
+            }
+            //set inset box shadow
+            //btn.style.boxShadow = "inset " + btn.offsetWidth * (percent/100) + "px 0px 0px 0px rgba(0,0,0,0.125)"
+            //call function again
+            progress(btn, song);
+        }, 1000);
+    }
+
+    nyanBtn.addEventListener('click', function(){
+        nyanBtn.classList.toggle('playing');
+        playPause(nyan);
+        progress(nyanBtn, nyan);
+    });
+
 </script>
 </body>
 </html>

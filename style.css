@@ -5,6 +5,25 @@ body {
     color: white;
 }
 
+.hidden {
+    display: none;
+}
+
+.btn-poupi {
+    font-size: 250% !important;
+    margin-top: 20px;
+}
+
+.listen {
+    Display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 200%;
+}
+
 .main-container {
 max-width: 100%;
 }
@@ -21,13 +40,25 @@ max-width: 100%;
     background-color: #212121;
 }
 
+.back3 {
+    background-color: white;
+    color: black;
+}
+
 .button {
     background: white;
     padding: 15px;
     border-radius: 15px;
-    color: black;
+    color: #333333;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.button:hover {
+    color: white;
+    background-color: #333333;
+    border: 3px solid white;
+    text-decoration: none;
 }
 
 section {
@@ -128,8 +159,8 @@ section.footer {
 
 .date-container {
     text-align: center;
-    background: white;
-    color: black;
+    background: #333333;
+    color: lightgrey;
     text-transform: uppercase;
     padding: 5%;
 }
