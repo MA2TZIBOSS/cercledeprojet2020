@@ -1,0 +1,74 @@
+/* general */
+
+body {
+    font-family: Poppins;
+    color: white;
+}
+
+.back1 {
+    background-color: #333333;
+}
+
+.back2 {
+    background-color: #212121;
+}
+
+.button {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* navbar */
+
+.custom-nav {
+    width : 100%;
+}
+
+.nav-link-custom {
+    width : 25%;
+}
+
+.navbar-nav {
+    width : 100%;
+}
+/* landing */
+
+.landing {
+    background-color: blue;
+    height: 100vh;
+}
+
+.main-title {
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.landing-text {
+    position: absolute;
+    top: 60%;
+    font-weight: bold;
+}
+
+/* presentation */
+
+.padding-35 {
+    padding : 35px;
+}
+
+.presentation {
+    position: relative;
+    overflow: hidden;
+}
+
+.cut-pingouin {
+    position: absolute;
+    bottom: -95px;
+    right: 0;
+    height: 50%;
+}
