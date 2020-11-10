@@ -5,6 +5,10 @@ body {
     color: white;
 }
 
+.main-container {
+max-width: 100%;
+}
+
 .back1 {
     background-color: #333333;
 }
@@ -82,4 +86,52 @@ body {
 
 .second-p {
     margin-bottom: 35px;
+}
+
+/* demo */
+
+.demo {
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+/* rencontre */
+
+.rencontre_title {
+    padding: 10px;
+}
+
+/* contact */
+
+.round-footer {
+    height: 100px;
+    width: 100px;
+    background: blue;
+    border-radius: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.contact i {
+    font-size: 250%;
+    padding-top: 30px;
+}
+
+.contact p {
+    text-align: center;
+    margin-top:10px;
+}
+
+.contact h2 {
+    padding: 10px;
+}
+
+/* footer */
+
+.footer-text {
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5em;
 }
