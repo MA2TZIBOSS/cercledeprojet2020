@@ -39,6 +39,7 @@ body {
 .landing {
     background-color: blue;
     height: 100vh;
+    position: relative;
 }
 
 .main-title {
@@ -55,6 +56,12 @@ body {
     font-weight: bold;
 }
 
+.landing-pingouin {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 40%;
+}
 /* presentation */
 
 .padding-35 {
@@ -71,4 +78,8 @@ body {
     bottom: -95px;
     right: 0;
     height: 50%;
+}
+
+.second-p {
+    margin-bottom: 35px;
 }
