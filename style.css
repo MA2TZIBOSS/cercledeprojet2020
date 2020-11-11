@@ -208,6 +208,21 @@ section.footer {
     font-size: 1.5em;
 }
 
+.flyer-button {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+}
+
+.fa-download {
+    padding-top: 0px !important;
+}
+#nyan-btn {
+    width: 100%;
+    height: 100%;
+}
 /* responsive mobile */
 
 @media (max-width: 992px) {
@@ -291,4 +306,28 @@ section.footer {
 
 .cut-pingouin {
     animation: float-hidden 5s ease-in-out infinite;
+}
+
+/* test */
+
+.hover .img {
+    overflow: hidden;
+    transform: rotate(0.0001deg);
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hover img {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+.hover:hover .img {
+    transform: scale(0.95);
+    width: 100%;
+}
+.hover:hover img {
+    transform: scale(1.15);
+    width: 100%;
+}
+
+div.img {
+    text-align: center;
 }
