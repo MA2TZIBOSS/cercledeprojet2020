@@ -69,14 +69,22 @@ section {
 section.footer {
     padding : 6px;
 }
+
+#c {
+    width: 98vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
 /* navbar */
 
 .custom-nav {
     width : 100%;
+    z-index: 1;
 }
 
 .nav-link-custom {
-    width : 25%;
+    width : 20%;
 }
 
 .navbar-nav {
@@ -103,7 +111,7 @@ section.footer {
 .main-title {
     text-transform: uppercase;
     position: absolute;
-    top: 50%;
+    top: 75%;
     font-weight: bold;
     letter-spacing: 10px;
     color: black;
@@ -111,7 +119,7 @@ section.footer {
 
 .landing-text {
     position: absolute;
-    top: 60%;
+    top: 85%;
     font-weight: bold;
     color: black;
 }
@@ -138,6 +146,18 @@ section.footer {
     bottom: -95px;
     right: 0;
     height: 50%;
+}
+
+.cut-text {
+    position: absolute;
+    bottom: 100px;
+    right: 25px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .second-p {
@@ -240,9 +260,12 @@ section.footer {
     }
 
     .main-title {
-        top: 45%;
+        top: 65%;
     }
 
+    #c {
+        top: -20%;
+    }
     section {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -251,6 +274,11 @@ section.footer {
 
     .landing {
         padding: 0 !important;
+    }
+
+    .cut-text {
+        bottom: 25px;
+        right: 5px;
     }
 }
 
@@ -306,6 +334,28 @@ section.footer {
 
 .cut-pingouin {
     animation: float-hidden 5s ease-in-out infinite;
+}
+
+@keyframes float-hidden-text {
+    0% {
+        opacity: 0%;
+    }
+    35% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    65% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.cut-text {
+    animation: float-hidden-text 5s ease-in-out infinite;
 }
 
 /* test */
