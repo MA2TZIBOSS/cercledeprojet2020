@@ -11,8 +11,12 @@
         idle,                               // Idle, the default state our character returns to
         clock = new THREE.Clock(),          // Used for anims, which run to a clock instead of frame rate
         currentlyAnimating = false,         // Used to check whether characters neck is being used in another anim
-        raycaster = new THREE.Raycaster(),  // Used to detect the click on our character
-        loaderAnim = document.getElementById('js-loader')
+        loaderAnim = document.getElementById('js-loader'),
+        scrollPos = window.scrollY
+
+    window.addEventListener('scroll', function(e) {
+        scrollPos = window.scrollY
+    })
 
     init()
 
@@ -211,7 +215,7 @@
     document.addEventListener('touchmove', function(e) {
         var mousecoords = {
             x: e.touches[0].clientX,
-            y: e.touches[0].clientY
+            y: e.touches[0].clientY+scrollPos
         }
         if (neck && waist) {
             moveJoint(mousecoords, neck, 50)
@@ -220,13 +224,13 @@
     })
 
     function getMousePos(e) {
-        return { x: e.clientX, y: e.clientY }
+        return { x: e.clientX, y: e.clientY+scrollPos }
     }
 
     function moveJoint(mouse, joint, degreeLimit) {
         let degrees = getMouseDegrees(mouse.x, mouse.y, degreeLimit)
         joint.rotation.y = THREE.Math.degToRad(degrees.x)
-        joint.rotation.x = THREE.Math.degToRad(degrees.y-20)
+        joint.rotation.x = THREE.Math.degToRad(degrees.y)
     }
 
     function getMouseDegrees(x, y, degreeLimit) {
@@ -267,9 +271,9 @@
         if (y >= w.y / 2) {
             ydiff = y - w.y / 2
             yPercentage = (ydiff / (w.y / 2)) * 100
-            dy = (degreeLimit * yPercentage) / 100
+            dy = (degreeLimit*0.6 * yPercentage) / 100
         }
-        return { x: dx, y: dy }
+        return { x: dx, y: dy-25 }
     }
 
 })()
