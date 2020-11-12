@@ -14,10 +14,6 @@
         loaderAnim = document.getElementById('js-loader'),
         scrollPos = window.scrollY
 
-    window.addEventListener('scroll', function(e) {
-        scrollPos = window.scrollY
-    })
-
     init()
 
     function init() {
@@ -29,12 +25,6 @@
         // Init the renderer
         renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
         renderer.setPixelRatio(window.devicePixelRatio)
-        let texture = THREE.ImageUtils.loadTexture("./landing.jpg")
-        let backgroundMesh = new THREE.Mesh(
-            new THREE.PlaneGeometry(2, 2, 0),
-            new THREE.MeshBasicMaterial({
-                map: texture
-            }))
         document.body.appendChild(renderer.domElement)
 
         // Add a camera
@@ -53,7 +43,7 @@
         // controls.enablePan = false
 
         let stacy_txt = new THREE.TextureLoader().load('./model/Poupi.png')
-        stacy_txt.flipY = false;
+        stacy_txt.flipY = false
         const stacy_mtl = new THREE.MeshPhongMaterial({
             map: stacy_txt,
             color: 0xffffff,
@@ -93,26 +83,20 @@
                 loaderAnim.remove()
 
                 mixer = new THREE.AnimationMixer(model)
-
-                let clips = fileAnimations.filter(val => val.name !== 'ArmatureAction2')
+                let clips = fileAnimations.filter(val => val.name !== 'Iddle_Animation')
                 possibleAnims = clips.map(val => {
                         let clip = THREE.AnimationClip.findByName(clips, val.name)
-
-                        clip.tracks.splice(3, 3)
-                        clip.tracks.splice(24, 3)
-
                         clip = mixer.clipAction(clip)
                         return clip
                     }
                 )
 
-                /*let idleAnim = THREE.AnimationClip.findByName(fileAnimations, 'ArmatureAction')
+                let idleAnim = THREE.AnimationClip.findByName(fileAnimations, 'Iddle_Animation')
                 idleAnim.tracks.splice(3, 3)
                 idleAnim.tracks.splice(24, 3)
 
                 idle = mixer.clipAction(idleAnim)
-                idle.play()*/
-
+                idle.play()
             },
             undefined, // We don't need this function
             function(error) {
@@ -185,12 +169,8 @@
     }
     // Get a random animation, and play it
     function playOnClick() {
-        let anim = possibleAnims[Math.floor(Math.random() * possibleAnims.length)]
-        anim.setLoop(THREE.LoopOnce)
-        anim.reset()
-        anim.play()
-        currentlyAnimating = false
-        //playModifierAnimation(idle, 0.25, possibleAnims[anim], 0.25)
+        let anim = Math.floor(Math.random() * possibleAnims.length)
+        playModifierAnimation(idle, 0.9, possibleAnims[anim], 0.9)
     }
 
     function playModifierAnimation(from, fSpeed, to, tSpeed) {
@@ -202,25 +182,25 @@
             from.enabled = true
             to.crossFadeTo(from, tSpeed, true)
             currentlyAnimating = false
-        }, to._clip.duration * 1000 - ((tSpeed + fSpeed) * 1000))
+        }, to._clip.duration * 1000)
     }
-
+    let mousecoords
     document.addEventListener('mousemove', function(e) {
-        var mousecoords = getMousePos(e)
+         mousecoords = getMousePos(e)
         if (neck && waist) {
             moveJoint(mousecoords, neck, 50)
             moveJoint(mousecoords, waist, 30)
         }
     })
     document.addEventListener('touchmove', function(e) {
-        var mousecoords = {
-            x: e.touches[0].clientX,
-            y: e.touches[0].clientY+scrollPos
-        }
+        mousecoords = getMousePos(e.touches[0])
         if (neck && waist) {
             moveJoint(mousecoords, neck, 50)
             moveJoint(mousecoords, waist, 30)
         }
+    })
+    window.addEventListener('scroll', function(e) {
+        scrollPos = window.scrollY
     })
 
     function getMousePos(e) {
@@ -228,9 +208,11 @@
     }
 
     function moveJoint(mouse, joint, degreeLimit) {
-        let degrees = getMouseDegrees(mouse.x, mouse.y, degreeLimit)
-        joint.rotation.y = THREE.Math.degToRad(degrees.x)
-        joint.rotation.x = THREE.Math.degToRad(degrees.y)
+        if (!currentlyAnimating){
+            let degrees = getMouseDegrees(mouse.x, mouse.y, degreeLimit)
+            joint.rotation.y = THREE.Math.degToRad(degrees.x)
+            joint.rotation.x = THREE.Math.degToRad(degrees.y)
+        }
     }
 
     function getMouseDegrees(x, y, degreeLimit) {
@@ -273,7 +255,7 @@
             yPercentage = (ydiff / (w.y / 2)) * 100
             dy = (degreeLimit*0.6 * yPercentage) / 100
         }
-        return { x: dx, y: dy-25 }
+        return { x: dx, y: dy-15 }
     }
 
 })()
