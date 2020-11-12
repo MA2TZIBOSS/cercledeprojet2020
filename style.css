@@ -9,6 +9,20 @@ body {
     display: none;
 }
 
+.img-495 {
+    height: 495px !important;
+}
+.full-height {
+    height : 100%;
+}
+
+.align-middle {
+    Display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-poupi {
     font-size: 250% !important;
     margin-top: 20px;
@@ -171,6 +185,32 @@ section.footer {
     padding-bottom: 25px;
 }
 
+
+.round-ra-fb {
+    position: absolute;
+    top: 35%;
+    left: 25px;
+    background: white !important;
+}
+
+.round-ra-insta {
+    position: absolute;
+    top: 35%;
+    right: 25px;
+    background: white !important;
+}
+
+.round-ra-insta i {
+    font-size: 250% !important;
+    margin-top: 30px;
+    color: black;
+}
+
+.round-ra-fb i {
+    font-size: 250% !important;
+    margin-top: 30px;
+    color: black;
+}
 /* rencontre */
 
 .rencontre_title {
