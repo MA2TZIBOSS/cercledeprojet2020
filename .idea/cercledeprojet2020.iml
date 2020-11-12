@@ -7,5 +7,8 @@
     <orderEntry type="library" name="3dc85fd73e" level="application" />
     <orderEntry type="library" name="three.js" level="application" />
     <orderEntry type="library" name="GLTFLoader" level="application" />
+    <orderEntry type="library" name="OrbitControls" level="application" />
+    <orderEntry type="library" name="OBJLoader" level="application" />
+    <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
   </component>
 </module>

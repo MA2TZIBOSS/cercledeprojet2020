@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" TAB="">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" >
     <link rel="stylesheet" href="style.css">
-    <script src="https://use.fontawesome.com/3dc85fd73e.js"></script>
-    <title>Le pingouin</title>
+
+    <title>Poupi</title>
 </head>
 <body>
 
@@ -32,10 +32,15 @@
                 </div>
             </nav>
 
-            <h1 class="main-title text-center col-12">Popi le Pingouin</h1>
+            <div class="loading" id="js-loader"><div class="loader"></div></div>
+            <div class="wrapper">
+                <canvas id="c"></canvas>
+            </div>
+
+            <h1 class="main-title text-center col-12">Poupi le Pingouin</h1>
             <p class="col-12 text-center landing-text">Le rescapé de la banquise Linux au large des côtes Blender.</p>
         </div>
-        <img class="landing-pingouin" src="poupi.png" alt="">
+        <img class="landing-pingouin" src="image/poupi.png" alt="">
     </section>
 
     <section class="presentation back1 col-12" id="presentation">
@@ -60,7 +65,7 @@
                 <a class="button" href="flyer.png">Découvrez moi !</a>
             </div>
         </div>
-        <img class="cut-pingouin" src="poupi.png" alt="">
+        <img class="cut-pingouin" src="image/poupi.png" alt="">
     </section>
 
     <section class="demo col-12 back2" id="demo">
@@ -120,7 +125,7 @@
                 <div class="row">
                         <div class="col-6">
                             <div class="round-footer">
-                                <audio id="nyan" src="poupi.mp3" preload="metadata" type="audio/mpeg">
+                                <audio id="nyan" src="image/poupi.mp3" preload="metadata" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                                 <a class="btn" id="nyan-btn"><i class="fa fa-volume-up btn-poupi"></i></a>
@@ -140,21 +145,21 @@
             <div class="col-12 col-md-4">
                 <a class="hover" href="#">
                     <div class="img">
-                        <img src="shirt.jpg"/>
+                        <img src="image/shirt.jpg" alt="t-shirt Poupi"/>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-md-4">
                 <a class="hover" href="#">
                     <div class="img">
-                        <img src="tote.jpg"/>
+                        <img src="image/tote.jpg" alt="totebag Poupi"/>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-md-4">
                 <a class="hover" href="#">
                     <div class="img">
-                        <img src="mug.jpg"/>
+                        <img src="image/mug.jpg" alt="MugPoupi"/>
                     </div>
                 </a>
             </div>
@@ -226,6 +231,12 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/OBJLoader.js'></script>
+<script src='http://threejs.org/examples/js/controls/OrbitControls.js'></script>
+<script src="Poupi.js"></script>
+<script src="https://use.fontawesome.com/3dc85fd73e.js"></script>
 <script>  
     var div = document.createElement('div');  
     div.className = 'fb-customerchat';  
@@ -259,7 +270,6 @@
         }(document, 'script', 'facebook-jssdk'));  
     }, 0);
 </script>
-
 <script>
     var nyan = document.getElementById('nyan');
     var nyanBtn = document.getElementById('nyan-btn');
@@ -286,7 +296,7 @@
             var current = song.currentTime;
             var percent = current/(end/100);
             //check if song is at the end
-            if(current==end){
+            if(current===end){
                 reset(btn, song);
             }
             //set inset box shadow

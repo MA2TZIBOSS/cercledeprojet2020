@@ -94,7 +94,7 @@ section.footer {
     height: 100vh;
     position: relative;
     padding: 0 !important;
-    background-image: url("landing.jpg");
+    background-image: url("image/landing.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
