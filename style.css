@@ -9,8 +9,22 @@ body {
     display: none;
 }
 
-.img-495 {
-    height: 495px !important;
+.modal.show .modal-dialog {
+    max-width: 1000px;
+}
+
+.modal-short {
+    margin-bottom: 40px;
+}
+.modal-title {
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.carousel.pointer-event {
+    height: 90%;
+    overflow: hidden;
 }
 .full-height {
     height : 100%;
@@ -188,14 +202,14 @@ section.footer {
 
 .round-ra-fb {
     position: absolute;
-    top: 35%;
+    bottom: 15px;
     left: 25px;
     background: white !important;
 }
 
 .round-ra-insta {
     position: absolute;
-    top: 35%;
+    bottom: 15px;
     right: 25px;
     background: white !important;
 }
@@ -322,6 +336,41 @@ section.footer {
     }
 }
 
+@media (max-width: 765px) {
+    .mobile-margin-top {
+        margin-top: 35px;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    .round-ra-fb {
+        height: 50px;
+        width: 50px;
+    }
+
+    .round-ra-fb i{
+        font-size: 100% !important;
+        margin-top: 18px;
+    }
+
+    .round-ra-insta {
+        height: 50px;
+        width: 50px;
+    }
+
+    .round-ra-insta i{
+        font-size: 100% !important;
+        margin-top: 18px;
+    }
+}
+
+@media (min-width: 765px) {
+    .desktop-hidden {
+        display: none;
+    }
+}
 /* animation */
 
 @keyframes float {
