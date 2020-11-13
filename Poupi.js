@@ -256,7 +256,7 @@
             yPercentage = (ydiff / (w.y / 2)) * 100
             dy = (degreeLimit*0.6 * yPercentage) / 100
         }
-        return { x: dx, y: dy-15 }
+        return { x: dx, y: dy-15>degreeLimit?degreeLimit:dy-15 }
     }
 
 })()
