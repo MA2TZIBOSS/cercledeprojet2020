@@ -102,8 +102,20 @@ section.footer {
     width: 98vw;
     height: 100vh;
     position: absolute;
-    top: 0;
+    top: 3%;
 }
+
+.indication {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 190%;
+    text-transform: uppercase;
+    color: white;
+}
+
+
 /* navbar */
 
 .custom-nav {
@@ -142,7 +154,7 @@ section.footer {
     top: 75%;
     font-weight: bold;
     letter-spacing: 10px;
-    color: black;
+    color: white;
 }
 
 .g4logo {
@@ -158,9 +170,9 @@ section.footer {
 
 .landing-text {
     position: absolute;
-    top: 85%;
+    top: 82%;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .carousel-control-next-reseau {
@@ -187,9 +199,9 @@ section.footer {
 .landing-text-clic {
     font-size: 13px;
     position: absolute;
-    top: 70%;
-    color: black;
+    top: 32%;
     width: 97%;
+    color: white;
 }
 
 .landing-pingouin {
@@ -357,8 +369,12 @@ section.footer {
         width: 100%;
     }
 
+    .landing-text {
+        top: 85%;
+    }
+
     .landing-text-clic {
-        top: 50%;
+        top: 30%;
     }
 
     .landing-pingouin {
@@ -371,11 +387,11 @@ section.footer {
     }
 
     .main-title {
-        top: 65%;
+        top: 80%;
     }
 
     #c {
-        top: -20%;
+        top: 5%;
     }
     section {
         padding-top: 15px;
@@ -526,4 +542,25 @@ section.footer {
 
 div.img {
     text-align: center;
+}
+
+/* responsive indic */
+
+@media (max-width: 1350px) {
+    .indication {
+        bottom: 7%;
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .indication {
+        font-size: 115%;
+    }
+}
+
+@media (max-width: 992px) {
+    .indication {
+        bottom: 3%;
+    }
 }
