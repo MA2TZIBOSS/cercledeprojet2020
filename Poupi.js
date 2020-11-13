@@ -83,7 +83,6 @@
                 loaderAnim.remove()
 
                 mixer = new THREE.AnimationMixer(model)
-                console.log(fileAnimations)
                 let clips = fileAnimations.filter(val => val.name !== '[Pile d’actions].008')
                 possibleAnims = clips.map(val => {
                         let clip = THREE.AnimationClip.findByName(clips, val.name)
