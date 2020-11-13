@@ -83,7 +83,8 @@
                 loaderAnim.remove()
 
                 mixer = new THREE.AnimationMixer(model)
-                let clips = fileAnimations.filter(val => val.name !== 'Iddle_Animation')
+                console.log(fileAnimations)
+                let clips = fileAnimations.filter(val => val.name !== '[Pile d’actions].008')
                 possibleAnims = clips.map(val => {
                         let clip = THREE.AnimationClip.findByName(clips, val.name)
                         clip = mixer.clipAction(clip)
@@ -91,7 +92,7 @@
                     }
                 )
 
-                let idleAnim = THREE.AnimationClip.findByName(fileAnimations, 'Iddle_Animation')
+                let idleAnim = THREE.AnimationClip.findByName(fileAnimations, '[Pile d’actions].008')
                 idleAnim.tracks.splice(3, 3)
                 idleAnim.tracks.splice(24, 3)
 
