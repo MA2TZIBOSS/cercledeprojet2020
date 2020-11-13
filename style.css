@@ -115,6 +115,10 @@ section.footer {
     color: white;
 }
 
+.indication-haut {
+    top: 8% !important;
+}
+
 
 /* navbar */
 
@@ -319,6 +323,7 @@ section.footer {
     border-radius: 50%;
     margin: auto;
     text-align: center;
+    z-index: 1000;
 }
 
 .contact i {
@@ -354,7 +359,7 @@ section.footer {
     border: none;
 }
 
-.fa-download {
+.fa-eye {
     padding-top: 0px !important;
 }
 
@@ -364,6 +369,13 @@ section.footer {
 }
 /* responsive mobile */
 
+
+@media (max-width: 992px) {
+
+    .landing-text {
+        display: none;
+    }
+}
 @media (max-width: 992px) {
     .nav-link-custom {
         width: 100%;
