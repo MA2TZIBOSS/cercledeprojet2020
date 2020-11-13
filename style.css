@@ -369,20 +369,13 @@ section.footer {
 }
 /* responsive mobile */
 
-
-@media (max-width: 992px) {
-
-    .landing-text {
-        display: none;
-    }
-}
 @media (max-width: 992px) {
     .nav-link-custom {
         width: 100%;
     }
 
     .landing-text {
-        top: 85%;
+        top: 88%;
     }
 
     .landing-text-clic {
@@ -396,6 +389,7 @@ section.footer {
     .cut-pingouin {
         bottom: -75px;
         height: 15%;
+        right: 0;
     }
 
     .main-title {
@@ -418,6 +412,7 @@ section.footer {
     .cut-text {
         bottom: 25px;
         right: 5px;
+        display: initial;
     }
 
     .round-ra-fb {
@@ -442,12 +437,26 @@ section.footer {
 }
 
 @media (max-width: 765px) {
+    .cut-pingouin {
+        right: -50px;
+    }
+
+    .cut-text {
+        display: none;
+    }
+}
+
+@media (max-width: 765px) {
     .mobile-margin-top {
         margin-top: 35px;
     }
 
     .mobile-hidden {
         display: none;
+    }
+
+    .landing-text {
+        top: 93%;
     }
 }
 
