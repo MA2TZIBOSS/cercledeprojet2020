@@ -152,6 +152,14 @@ section.footer {
     color: black;
 }
 
+.landing-text-clic {
+    font-size: 13px;
+    position: absolute;
+    top: 70%;
+    color: black;
+    width: 97%;
+}
+
 .landing-pingouin {
     position: absolute;
     bottom: 0px;
